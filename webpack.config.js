@@ -2,23 +2,23 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  mode: "production", // ✅ Use production mode for deployment
+  mode: "development",
   entry: "./src/index.js",
   output: {
-    path: path.resolve(__dirname, "dist"), // ✅ Output folder for build
+    path: path.resolve(__dirname, "dist"), // ✅ better than "public"
     filename: "main.js",
-    clean: true, // ✅ Cleans old builds
+    clean: true, // clears old build files
   },
   target: "web",
   devServer: {
-    port: 3000,
-    static: ["./public"],
+    port: "3000",
+    static: ["./dist"],
     open: true,
     hot: true,
     liveReload: true,
   },
   resolve: {
-    extensions: [".js", ".jsx", ".json", ".ts"],
+    extensions: [".js", ".jsx", ".json"],
   },
   module: {
     rules: [
@@ -29,17 +29,21 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader", "postcss-loader"], // Tailwind support
+        use: ["style-loader", "css-loader", "postcss-loader"],
       },
       {
         test: /\.s[ac]ss$/i,
-        use: ["style-loader", "css-loader", "sass-loader"], // Optional SCSS
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
+      {
+      test: /\.(png|jpe?g|gif|svg)$/i,  // ✅ this must exactly match .jpg/.jpeg
+      type: "asset/resource",           // ✅ Webpack 5 built-in
+    },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./public/index.html", // Automatically injects bundle
+      template: "./public/index.html",
     }),
   ],
 };

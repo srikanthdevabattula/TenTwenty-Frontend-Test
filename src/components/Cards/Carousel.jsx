@@ -1,14 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Cards.css";
+import slide1 from '../../assets/slide1.jpg'
+import slide2 from '../../assets/slide2.jpg'
+import slide3 from '../../assets/slide3.jpg'
+import slide4 from '../../assets/slide4.jpg'
+import slide5 from '../../assets/slide5.jpg'
+import slide6 from '../../assets/slide6.jpg'
 
 const images = [
-  { src: "assets/slide1.jpg", name: "Client 1", location:"Dubai, United Arab Emirates" },
-  { src: "assets/slide2.jpg", name: "Client 2", location:"Cape Town, South Africa"},
-  { src: "assets/slide3.jpg", name: "Client 3", location:"Toronto, Canada"},
-  { src: "assets/slide4.jpg", name: "Client 4", location:"Sydney, Australia"},
-  { src: "assets/slide5.jpg", name: "Client 5", location:"New York, United States"},
-  { src: "assets/slide6.jpg", name: "Client 6", location:"London, United Kingdom"},
+  { src: slide1, name: "Client 1", location:"Dubai, United Arab Emirates" },
+  { src: slide2, name: "Client 2", location:"Cape Town, South Africa"},
+  { src: slide3, name: "Client 3", location:"Toronto, Canada"},
+  { src: slide4, name: "Client 4", location:"Sydney, Australia"},
+  { src: slide5, name: "Client 5", location:"New York, United States"},
+  { src: slide6, name: "Client 6", location:"London, United Kingdom"},
 ];
 
 export default function Carousel() {
