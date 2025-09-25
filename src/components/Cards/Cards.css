@@ -1,0 +1,34 @@
+
+.drag-carousel-container {
+  @apply w-full h-[700px] md:h-[550px] sm:h-[450px] mx-auto mb-10 overflow-hidden relative cursor-grab;
+  perspective: 1000px; 
+}
+
+.drag-carousel {
+  @apply relative w-full h-full;
+}
+
+.drag-carousel-item {
+  @apply absolute w-[400px] md:w-[300px] sm:w-[200px] h-[519px] md:h-[400px] sm:h-[300px] top-[300px] md:top-[200px] sm:top-[160px] left-1/2 origin-center transition-transform transition-opacity transition-all;
+  transform: translate(-50%, -50%);
+}
+
+.drag-carousel-item img {
+  @apply w-full h-full object-cover  pointer-events-none;
+}
+
+.img-name {
+  @apply absolute bottom-[-130px] left-1/2 -translate-x-1/2  text-center ;
+}
+.img-name h3{
+  @apply text-[30px] lg:text-[27px] md:text-[23px] sm:text-[20px];
+}
+
+.img-name p{
+  @apply text-[20px] lg:text-[18px] md:text-[17px] sm:text-[14px] w-[300px] text-[#7A7777];
+}
+
+.drag-carousel-item.active {
+  transform: translate(-50%, -50%) scale(1.05);
+  @apply z-30 opacity-100;
+}

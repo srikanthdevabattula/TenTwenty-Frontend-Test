@@ -1,0 +1,25 @@
+.nav {
+  @apply absolute top-[21px] md:top-[10px] sm:mt-[-10px] text-[17px] md:text-[13px] sm:text-[10px] left-0 z-50 h-[70px] md:h-[50px] w-full px-[20px] sm:px-0;
+}
+
+.navDivs {
+  @apply flex flex-row justify-between items-center bg-[#FFFFFF] w-full h-full px-[44px] md:px-[24px];
+}
+
+.navItems {
+  @apply space-x-[40px] flex flex-row sm:flex-col md:space-x-[20px] sm:space-x-[0px] sm:text-center sm:bg-white sm:space-y-2 p-2;
+}
+
+.navItems a:hover {
+  @apply font-semibold transition-all duration-200;
+  
+}
+
+.navButton{
+   @apply flex flex-row items-center justify-center  space-x-3 md:space-x-1 h-[40px] md:h-[30px] sm:h-[20px] w-[180px] sm:w-[100px] md:w-[120px] sm:m-0 bg-[#FFFCFA] border-[1px] border-[#000000]
+}
+
+.navButton:hover{
+@apply font-semibold transition-all duration-200 border-[2px] shadow-md;
+  
+}

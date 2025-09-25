@@ -1,8 +1,8 @@
 import React from 'react'
 import "./index.css"
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Cards from './components/Cards'
+import Navbar from './components/Navbar/Navbar'
+import Hero from './components/Hero/Hero'
+import Cards from './components/Cards/Cards'
 const App = () => {
   return (
     <div>
