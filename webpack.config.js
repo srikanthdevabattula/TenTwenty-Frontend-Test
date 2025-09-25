@@ -2,16 +2,16 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  mode: "development",
+  mode: "production", // ✅ Use production mode for deployment
   entry: "./src/index.js",
   output: {
-    path: path.resolve(__dirname, "public"),
+    path: path.resolve(__dirname, "dist"), // ✅ Output folder for build
     filename: "main.js",
+    clean: true, // ✅ Cleans old builds
   },
-
   target: "web",
   devServer: {
-    port: "3000",
+    port: 3000,
     static: ["./public"],
     open: true,
     hot: true,
@@ -27,14 +27,13 @@ module.exports = {
         exclude: /node_modules/,
         use: "babel-loader",
       },
-      ,
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader", "postcss-loader"], // ✅ Add postcss-loader for Tailwind
+        use: ["style-loader", "css-loader", "postcss-loader"], // Tailwind support
       },
       {
         test: /\.s[ac]ss$/i,
-        use: ["style-loader", "css-loader", "sass-loader"], // ✅ Optional SCSS support
+        use: ["style-loader", "css-loader", "sass-loader"], // Optional SCSS
       },
     ],
   },
@@ -43,5 +42,4 @@ module.exports = {
       template: "./public/index.html", // Automatically injects bundle
     }),
   ],
-
 };
